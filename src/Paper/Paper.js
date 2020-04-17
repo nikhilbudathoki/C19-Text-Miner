@@ -194,16 +194,14 @@ class PaperComponent extends Component {
 		let excerpt, match_indices;
 		if (excerptName === 'relevant_section') {
 			excerpt = this.state.paper.text_body;
-			match_indices = this.state.paper.match_indices;
-			return this.makeHighlightedFragments(match_indices, excerpt);
+			match_indices = this.state.paper.match_indices
 		} else if (excerptName === 'scibert_summary') {
 			//return null;
 			excerpt = this.state.paper.scibert_summary;
-			return this._makeSentenceFragments(excerpt);
 		}
 
 
-		
+		return this.makeHighlightedFragments(match_indices, excerpt);
 	}
 
 	// last index tracked only for global matches (if not global, regexp is basically stateless)
