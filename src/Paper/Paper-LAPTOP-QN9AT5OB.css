@@ -1,0 +1,27 @@
+.paper-container {
+  display: grid;
+  /* grid-template-columns: 1fr 2fr; */
+  gap: 20px;
+
+  border-bottom: 1px solid black;
+  margin-bottom: 25px;
+}
+
+.paper-metadata {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: max-content;
+  gap: 10px;
+}
+
+.paper-container h4 {
+  margin: 0;
+}
+.paper-container p {
+  margin-bottom: 25px;
+}
+
+.paper-summary .sentence:hover {
+  text-shadow: 1px 0px 0px;
+}
+

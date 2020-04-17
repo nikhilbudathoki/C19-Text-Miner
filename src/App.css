@@ -1,0 +1,19 @@
+.app-header {
+  margin-bottom: 30px;
+  background: #444;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+
+.searchbar {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
