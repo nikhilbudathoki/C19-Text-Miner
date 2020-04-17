@@ -197,8 +197,10 @@ class PaperComponent extends Component {
 			match_indices = this.state.paper.match_indices
 		} else if (excerptName === 'scibert_summary') {
 			//return null;
-			excerpt = this.state.paper.scibert_summary;
-			match_indices = [0, 1];
+			// This part of the code resolves match indices to only rernder
+			// a part of the extracted summary.
+			excerpt = ' ' + this.state.paper.scibert_summary;
+			match_indices = [0, (excerpt.length-3)/3];
 		}
 
 
@@ -265,6 +267,7 @@ class PaperComponent extends Component {
 	setExcerpt(excerptName) {
 		if (this.state.excerptName !== excerptName) {
 			const arr = this._makeExcerptHighlightedTemplate(excerptName)
+			console.log(arr);
 			if (arr) {
 				const [frags, window] = arr
 				this.setState({
