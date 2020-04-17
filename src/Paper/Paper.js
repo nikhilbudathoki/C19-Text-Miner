@@ -134,7 +134,15 @@ class PaperComponent extends Component {
 	renderExcerpt() {
 		return this.state.noExcerpt
 			?	(<span>Not Extracted Yet</span>)
-			: this.state.excerptFrags.filter((_, idx) => idx >= this.state.excerptFragWindow.start && idx <= this.state.excerptFragWindow.end);
+			: this._renderExcerpt(this.state.excerptName);
+	}
+
+	_renderExcerpt(excerptName) {
+		if (excerptName === 'relevant_section') {
+			return this.state.excerptFrags.filter((_, idx) => idx >= this.state.excerptFragWindow.start && idx <= this.state.excerptFragWindow.end)
+		} else {
+			return this.state.paper[excerptName]
+		}
 	}
 
 	onBefore() {
