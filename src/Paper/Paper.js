@@ -196,8 +196,8 @@ class PaperComponent extends Component {
 			excerpt = this.state.paper.text_body;
 			match_indices = this.state.paper.match_indices
 		} else if (excerptName === 'scibert_summary') {
-			return null;
-			// excerpt = this.state.paper.scibert_summary;
+			//return null;
+			excerpt = this.state.paper.scibert_summary;
 		}
 
 
