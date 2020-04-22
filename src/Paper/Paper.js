@@ -204,11 +204,9 @@ class PaperComponent extends Component {
 			excerpt = this.state.paper.text_body;
 			match_indices = this.state.paper.match_indices
 		} else if (excerptName === 'scibert_summary') {
-			//return null;
-			// This part of the code resolves match indices to only rernder
-			// a part of the extracted summary.
-			excerpt = ' ' + this.state.paper.scibert_summary;
-			match_indices = [0, (excerpt.length-3)/3];
+			return this.state.paper.scibert_summary;
+			// excerpt = ' ' + this.state.paper.scibert_summary;
+			// match_indices = [0, (excerpt.length-3)/3];
 		}
 
 
