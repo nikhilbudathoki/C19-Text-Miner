@@ -56,7 +56,7 @@ class App extends Component {
 			cleaned: papers, // raw data cleaned - normalized fields (unique/flat lists, string -> array etc)
 			filtered: papers, // cleaned data filtered by filters (risk factor)
 			winStart: 0, // paginated window of filtered papers to show
-			winSize: 1,
+			winSize: 10,
 		}
 
 		this.filterByRiskFactor = this.filterByRiskFactor.bind(this);
