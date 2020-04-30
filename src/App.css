@@ -1,19 +1,96 @@
-.app-header {
-  margin-bottom: 30px;
-  background: #444;
-  padding: 5px 10px;
+.app-header{
+  padding:1rem 0 0 0 ;
+  color:#fff;
+  display: flex;
+  align-items:  center;
+  flex-flow:column;
+}
+
+nav{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
   color: #fff;
+  padding: 0 25px 1rem;
+  width:100vw;
+  max-width: 1100px;
+  box-sizing: border-box;
 }
-
-
+nav a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+}
+header{
+  background:#053C5E;
+  margin:0;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
 .searchbar {
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 20px;
+ display:flex;
+ align-items: center;
+ justify-content: center; 
 }
+.filters{
+  background-color: #fff;
+  border-radius: 10px;
+ margin: 2rem 0;
+  display:flex;
+}
+.filters p{
+  font-weight: bold;
+  color:#fff;
+  margin:0;
+  padding:0;
+}
+.label{
+  background-color: #59ABDE;
+  padding:0.7rem 0.7rem 0.7rem 1.2rem;
+  border-radius: 10px 0 0 10px;
 
+}
 .filters label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+select{
+  padding:0.35rem;
+  margin:0.35rem;
+  border:none;
+}
+
+h1{
+  text-align: center;
+}
+.papers{
+  display:flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+
+}
+.result-count{
+ display: block;
+ width: 100%;
+ box-sizing: border-box;
+ padding: 0 25px;
+ max-width: 1100px;
+ color:gray;
+ font-size: 0.8rem;
+}
+.load-paper{
+  margin: 1rem 0 2.5rem;
+color:#fff;
+padding: 0.8rem 2rem;
+border:none;
+font-weight: bold;
+border-radius: 5px;
+background-color: #59ABDE;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+.load-paper:hover{
+  box-shadow: 0px 4px 8px 0px rgba(0, 97, 177, 0.4);
 }
