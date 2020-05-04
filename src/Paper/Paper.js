@@ -112,7 +112,15 @@ class PaperComponent extends Component {
 	renderExcerpt() {
 		return this.state.noExcerpt
 			? (<span>Not Extracted Yet</span>)
-			: this.state.excerptFrags.filter((_, idx) => idx >= this.state.excerptFragWindow.start && idx <= this.state.excerptFragWindow.end);
+			: this._renderExcerpt(this.state.excerptName);
+	}
+
+	_renderExcerpt(excerptName) {
+		if (excerptName === 'relevant_section') {
+			return this.state.excerptFrags.filter((_, idx) => idx >= this.state.excerptFragWindow.start && idx <= this.state.excerptFragWindow.end)
+		} else {
+			return this.state.paper[excerptName]
+		}
 	}
 
 	onBefore() {
@@ -174,12 +182,18 @@ class PaperComponent extends Component {
 			excerpt = this.state.paper.text_body;
 			match_indices = this.state.paper.match_indices
 		} else if (excerptName === 'scibert_summary') {
-			return null;
+			return this.state.paper.scibert_summary;
+			// excerpt = ' ' + this.state.paper.scibert_summary;
+			// match_indices = [0, (excerpt.length-3)/3];
 		}
 
 
 		return this.makeHighlightedFragments(match_indices, excerpt);
 	}
+
+	// last index tracked only for global matches (if not global, regexp is basically stateless)
+	// (\w)*\s will capture only single characters but (\w*) will capture the whole word
+	//
 
 	makeHighlightedFragments(match_indices, snippet) {
 		match_indices.sort((a, b) => a - b)
@@ -237,6 +251,7 @@ class PaperComponent extends Component {
 	setExcerpt(excerptName) {
 		if (this.state.excerptName !== excerptName) {
 			const arr = this._makeExcerptHighlightedTemplate(excerptName)
+			console.log(arr);
 			if (arr) {
 				const [frags, window] = arr
 				this.setState({
