@@ -72,12 +72,12 @@ class PaperComponent extends Component {
 				<div className="paper-metadata">
 					<h2>{title}</h2>
 					<h4>Journal:</h4> <span>{journal}</span>
+					<h4>Authors:</h4> <span>{authors}</span>
 					<h4>Publication Date:</h4> <span>{(new Date(publish_time)).toUTCString()}</span>
 
-					<h4>Doi:</h4> <span>{doi}</span>
+					<h4>Doi:</h4> <span><a target="_blank" href={link}>{doi}</a></span>
 					<h4>Design:</h4> <span className="title-case">{this.showButtons(design)}</span>
 					<h4>Relevant Risk Factors:</h4> {this.showButtons(risk_factors)}
-					<a target="_blank" href={link}>View Reference</a> <span></span>
 
 				</div>
 
