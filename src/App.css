@@ -9,7 +9,7 @@
 nav{
   display:flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   color: #fff;
   padding: 0 25px 1rem;
   width:100vw;
