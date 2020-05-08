@@ -112,7 +112,6 @@ class App extends Component {
 				<header>
 					<div className="app-header">
 						<nav>
-							<h3>Kaggle</h3>
 							<a target="_blank" href="https://github.com/mahtablci1/Kaggle">View Repo</a>
 
 						</nav>

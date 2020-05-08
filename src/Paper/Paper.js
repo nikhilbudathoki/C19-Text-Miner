@@ -76,7 +76,6 @@ class PaperComponent extends Component {
 					<h4>Publication Date:</h4> <span>{(new Date(publish_time)).toUTCString()}</span>
 
 					<h4>Doi:</h4> <span><a target="_blank" href={link}>{doi}</a></span>
-					<h4>Design:</h4> <span className="title-case">{this.showButtons(design)}</span>
 					<h4>Relevant Risk Factors:</h4> {this.showButtons(risk_factors)}
 
 				</div>
