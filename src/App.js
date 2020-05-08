@@ -117,7 +117,7 @@ class App extends Component {
 
 						</nav>
 
-						<h1>COVID-19 Risk Factors - Insights from Epidemiological Studies</h1>
+						<h1>Risk Factors of COVID-19</h1>
 					</div>
 
 					<div className="searchbar">

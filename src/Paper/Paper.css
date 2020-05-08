@@ -103,10 +103,11 @@ cursor: pointer;
   background-color: rgb(223, 240, 250);
 }
 .text{
-  height: 300px;
-  overflow-y: scroll;
+  height:7rem;
+  overflow: hidden;
+ /*  white-space: nowrap; 
+  text-overflow: ellipsis;  */
   margin: 1rem 0 ; 
-  overflow-x: hidden;
 }
 
 @media(max-width:700px){
