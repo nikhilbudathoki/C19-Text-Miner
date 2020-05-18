@@ -93,12 +93,9 @@ class PaperComponent extends Component {
 						</h3>
 
 						<div className="content">
-							<button onClick={this.onBefore}>View previous text</button>
 							<div className="text">
 								<p>{this.renderExcerpt()}</p>
 							</div>
-							<button onClick={this.onAfter}>View next text</button>
-
 						</div>
 
 					</div>
@@ -116,7 +113,8 @@ class PaperComponent extends Component {
 
 	_renderExcerpt(excerptName) {
 		if (excerptName === 'relevant_section') {
-			return this.state.excerptFrags.filter((_, idx) => idx >= this.state.excerptFragWindow.start && idx <= this.state.excerptFragWindow.end)
+			//return this.state.excerptFrags.filter((_, idx) => idx >= this.state.excerptFragWindow.start && idx <= this.state.excerptFragWindow.end)
+			return this.state.excerptFrags;
 		} else {
 			return this.state.paper[excerptName]
 		}

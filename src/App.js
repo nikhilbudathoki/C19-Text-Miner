@@ -38,6 +38,20 @@ class App extends Component {
 		this.filterByRiskFactor = this.filterByRiskFactor.bind(this);
 	}
 
+	// only for temporary measures
+	removeDuplicates(papers) {
+		var filtered_papers = [];
+		var filtered_ids = [];
+
+		papers.forEach((p, idx) => {
+			if (!filtered_ids.includes(p.doc_id)) {
+				filtered_papers.push(p);
+				filtered_ids.push(p.doc_id);
+			}
+		});
+		return filtered_papers;
+	}
+
 	getPaperRiskFactors(paper) {
 		let _factors = []
 		for (const prop in paper) {
@@ -104,7 +118,7 @@ class App extends Component {
 	}
 
 	render() {
-		const papers = this.state.filtered.slice(this.state.winStart, this.state.winStart + this.state.winSize);
+		const papers = this.removeDuplicates(this.state.filtered).slice(this.state.winStart, this.state.winStart + this.state.winSize);
 
 		return (
 			<div>
